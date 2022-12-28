@@ -15,8 +15,18 @@ Book.prototype.info = function () {
     return `${this.title} by ${this.author}, ${this.pages} pages, have not read yet.`;
 };
 
+Book.prototype.addToLibrary = function () {
+  myLibrary.push(this);
+};
+
 let hobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, false);
 let kings = new Book("The Way of Kings", "Brandon Sanderson", 2340, true);
 console.log(hobbit.info());
 console.log(kings.info());
 console.log(kings);
+
+let myLibrary = [];
+
+hobbit.addToLibrary();
+kings.addToLibrary();
+console.log(myLibrary);
