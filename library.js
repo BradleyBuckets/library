@@ -1,4 +1,9 @@
 let viewport = document.querySelector(".viewport");
+let card = document.querySelector(".card");
+let title = document.querySelector(".title");
+let author = document.querySelector(".author");
+let pages = document.querySelector(".pages");
+let read = document.querySelector(".read");
 
 // Constructor function for a book
 function Book(title, author, pages, haveRead) {
@@ -22,6 +27,11 @@ Book.prototype.addToLibrary = function () {
   myLibrary.push(this);
 };
 
+// Update a card on the screen to a book
+Book.prototype.updateCard = function () {
+  title.innerHTML = this.title;
+};
+
 // Crete new books
 let hobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, false);
 let kings = new Book("The Way of Kings", "Brandon Sanderson", 2340, true);
@@ -41,3 +51,5 @@ console.log(myLibrary);
 for (let book of myLibrary) {
   console.log(book.info());
 }
+
+hobbit.updateCard();
