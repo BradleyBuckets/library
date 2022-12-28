@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+}
+
+div {
+  border: 1px solid black;
+}
+
+.viewport {
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  padding: 50px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+  height: 150px;
+  flex-direction: column;
+  grid-column: span 2;
+}
+
+.card,
+.title,
+.author,
+.pages,
+.read {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title,
+.author {
+  flex: 2;
+}
+
+.pages,
+.read {
+  flex: 1;
+}
