@@ -1,10 +1,5 @@
 let viewport = document.querySelector(".viewport");
 let container = document.querySelector(".container");
-let card = document.querySelector(".card");
-let title = document.querySelector(".title");
-let author = document.querySelector(".author");
-let pages = document.querySelector(".pages");
-let read = document.querySelector(".read");
 
 // Constructor function for a book
 function Book(title, author, pages, haveRead) {
@@ -29,22 +24,49 @@ Book.prototype.addToLibrary = function () {
 };
 
 // Update a card on the screen to a book
-Book.prototype.updateCard = function () {
-  title.innerHTML = this.title;
-  author.innerHTML = this.author;
-  pages.innerHTML = `Pages: ${this.pages}`;
+// Book.prototype.updateCard = function () {
+//   title.innerHTML = this.title;
+//   author.innerHTML = this.author;
+//   pages.innerHTML = `Pages: ${this.pages}`;
+//   if (this.haveRead) {
+//     read.innerHTML = "You have read this already";
+//   } else read.innerHTML = "You have not read this yet";
+// };
+
+Book.prototype.createCard = function () {
+  let newCard = document.createElement("div");
+  newCard.classList.add("card");
+  // creat new title
+  let newTitle = document.createElement("div");
+  newTitle.classList.add("title");
+  newTitle.innerHTML = this.title;
+  // creat new author
+  let newAuthor = document.createElement("div");
+  newAuthor.classList.add("author");
+  newAuthor.innerHTML = this.author;
+  // creat new pages
+  let newPages = document.createElement("div");
+  newPages.classList.add("pages");
+  newPages.innerHTML = `Pages: ${this.pages}`;
+  // creat new read
+  let newRead = document.createElement("div");
+  newRead.classList.add("pages");
   if (this.haveRead) {
-    read.innerHTML = "You have read this already";
-  } else read.innerHTML = "You have not read this yet";
+    newRead.innerHTML = "You have read this already";
+  } else newRead.innerHTML = "You have not read this yet";
+  // add elements to card
+  newCard.appendChild(newTitle);
+  newCard.appendChild(newAuthor);
+  newCard.appendChild(newPages);
+  newCard.appendChild(newRead);
+  // add card to screen
+  container.appendChild(newCard);
 };
 
 // Crete new books
 let hobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, false);
 let kings = new Book("The Way of Kings", "Brandon Sanderson", 2340, true);
 let harryPotter = new Book("Harry Potter", "J.K. Rowling", 314, true);
-console.log(hobbit.info());
-console.log(kings.info());
-console.log(kings);
 
 let myLibrary = [];
 
@@ -58,8 +80,6 @@ for (let book of myLibrary) {
   console.log(book.info());
 }
 
-kings.updateCard();
-
 // create a new card and put it on the screen
 // create new card
 let newCard = document.createElement("div");
@@ -72,3 +92,7 @@ newTitle.innerHTML = "Hello World";
 newCard.appendChild(newTitle);
 // add card to screen
 container.appendChild(newCard);
+
+hobbit.createCard();
+kings.createCard();
+harryPotter.createCard();
