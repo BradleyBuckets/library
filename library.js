@@ -1,4 +1,5 @@
 let viewport = document.querySelector(".viewport");
+let container = document.querySelector(".container");
 let card = document.querySelector(".card");
 let title = document.querySelector(".title");
 let author = document.querySelector(".author");
@@ -58,3 +59,16 @@ for (let book of myLibrary) {
 }
 
 kings.updateCard();
+
+// create a new card and put it on the screen
+// create new card
+let newCard = document.createElement("div");
+newCard.classList.add("card");
+// creat new title
+let newTitle = document.createElement("div");
+newTitle.classList.add("title");
+newTitle.innerHTML = "Hello World";
+// add title to card
+newCard.appendChild(newTitle);
+// add card to screen
+container.appendChild(newCard);
