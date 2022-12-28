@@ -30,6 +30,11 @@ Book.prototype.addToLibrary = function () {
 // Update a card on the screen to a book
 Book.prototype.updateCard = function () {
   title.innerHTML = this.title;
+  author.innerHTML = this.author;
+  pages.innerHTML = `Pages: ${this.pages}`;
+  if (this.haveRead) {
+    read.innerHTML = "You have read this already";
+  } else read.innerHTML = "You have not read this yet";
 };
 
 // Crete new books
@@ -52,4 +57,4 @@ for (let book of myLibrary) {
   console.log(book.info());
 }
 
-hobbit.updateCard();
+kings.updateCard();

@@ -43,3 +43,11 @@ div {
 .read {
   flex: 1;
 }
+
+.title {
+  font-size: larger;
+}
+
+.author {
+  font-size: large;
+}
