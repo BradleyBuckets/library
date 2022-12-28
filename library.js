@@ -76,8 +76,19 @@ harryPotter.addToLibrary();
 console.log(myLibrary);
 
 // Loop through library and display info
-for (let book of myLibrary) {
-  console.log(book.info());
+function updateScreen() {
+  clearScreen();
+  for (let book of myLibrary) {
+    console.log(book.info());
+    book.createCard();
+  }
+}
+
+function clearScreen() {
+  let cards = document.querySelectorAll(".card");
+  for (let card of cards) {
+    card.remove();
+  }
 }
 
 // create a new card and put it on the screen
@@ -93,6 +104,7 @@ newCard.appendChild(newTitle);
 // add card to screen
 container.appendChild(newCard);
 
-hobbit.createCard();
-kings.createCard();
-harryPotter.createCard();
+updateScreen();
+let mormon = new Book("Bom", "Moroni", 560, true);
+mormon.addToLibrary();
+updateScreen();
