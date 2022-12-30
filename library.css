@@ -18,17 +18,20 @@ div {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.card {
+.card,
+.add {
   height: 150px;
   flex-direction: column;
   grid-column: span 2;
 }
 
 .card,
+.add,
 .title,
 .author,
 .pages,
-.read {
+.read,
+.create {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +60,13 @@ div {
   margin: 10px;
 }
 
-.remove:hover {
+.remove:hover,
+.create:hover {
   cursor: pointer;
   background-color: whitesmoke;
+}
+
+.create {
+  height: 40px;
+  width: 200px;
 }
