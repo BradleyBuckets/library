@@ -40,7 +40,8 @@ div {
 }
 
 .pages,
-.read {
+.read,
+.remove {
   flex: 1;
 }
 
@@ -50,4 +51,13 @@ div {
 
 .author {
   font-size: large;
+}
+
+.remove {
+  margin: 10px;
+}
+
+.remove:hover {
+  cursor: pointer;
+  background-color: whitesmoke;
 }

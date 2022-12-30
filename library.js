@@ -28,6 +28,7 @@ Book.prototype.createCard = function () {
   // create new card
   let newCard = document.createElement("div");
   newCard.classList.add("card");
+  newCard.id = this.title;
   // create new title
   let newTitle = document.createElement("div");
   newTitle.classList.add("title");
@@ -46,11 +47,19 @@ Book.prototype.createCard = function () {
   if (this.haveRead) {
     newRead.innerHTML = "You have read this already";
   } else newRead.innerHTML = "You have not read this yet";
+  // add remove button
+  let remove = document.createElement("div");
+  remove.classList.add("remove");
+  // having the same id as the card allows me to connect the button to the card as a whole
+  remove.id = this.title;
+  remove.innerHTML = "Remove";
+  remove.addEventListener("click", removeCard);
   // add elements to card
   newCard.appendChild(newTitle);
   newCard.appendChild(newAuthor);
   newCard.appendChild(newPages);
   newCard.appendChild(newRead);
+  newCard.appendChild(remove);
   // add card to screen
   container.appendChild(newCard);
 };
@@ -65,14 +74,12 @@ let myLibrary = [];
 hobbit.addToLibrary();
 kings.addToLibrary();
 harryPotter.addToLibrary();
-console.log(myLibrary);
 
 // add cards to the screen
 function updateScreen() {
   clearScreen();
   // loop through library and display info and create card
   for (let book of myLibrary) {
-    console.log(book.info());
     book.createCard();
   }
 }
@@ -85,6 +92,13 @@ function clearScreen() {
   for (let card of cards) {
     card.remove();
   }
+}
+
+// remove card when button is clicked
+function removeCard() {
+  // 'this' is referencing the button itself
+  let rm = document.getElementById(this.id);
+  rm.remove();
 }
 
 updateScreen();
