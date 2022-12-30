@@ -108,8 +108,11 @@ function clearScreen() {
 // remove card when button is clicked
 function removeCard() {
   // 'this' is referencing the button itself
-  let rm = document.getElementById(this.id);
-  rm.remove();
+  // map mylibrary so each item just is the titles then find the idex
+  let result = myLibrary.map((item) => item.title).indexOf(this.id);
+  // remove that specific item from the array
+  myLibrary.splice(result, 1);
+  updateScreen();
 }
 
 updateScreen();
