@@ -25,6 +25,10 @@ div {
   grid-column: span 2;
 }
 
+.add {
+  grid-column: span 4;
+}
+
 .card,
 .add,
 .title,
@@ -69,4 +73,20 @@ div {
 .create {
   height: 40px;
   width: 200px;
+}
+
+.popup {
+  position: relative;
+  width: 100%;
+}
+
+.popupForm {
+  height: 400px;
+  width: 300px;
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
+  background-color: whitesmoke;
 }

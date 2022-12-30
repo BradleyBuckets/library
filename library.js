@@ -1,5 +1,10 @@
 let viewport = document.querySelector(".viewport");
 let container = document.querySelector(".container");
+let newbook = document.querySelector(".create");
+
+newbook.addEventListener("click", () => {
+  document.getElementById("popupForm").style.display = "block";
+});
 
 // constructor function for a book
 function Book(title, author, pages, haveRead) {
