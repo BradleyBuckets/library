@@ -106,10 +106,12 @@ div {
   justify-content: center;
 }
 
-.firstName,
-.email,
+.bookTitle,
+.bookAuthor,
+.bookPages,
+.haveYouRead,
 .button,
 .submit,
 .close {
-  padding: 5px;
+  padding: 10px;
 }

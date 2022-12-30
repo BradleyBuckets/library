@@ -15,29 +15,24 @@
         <div class="form">
           <form action="/sign-up" method="post">
             <div class="formWrapper">
-              <div class="firstName">
-                <label for="firstName">FIRST NAME</label>
-                <input type="text" id="firstName" name="firstName" />
+              <div class="bookTitle">
+                <label for="bookTitle">TITLE </label>
+                <input type="text" id="bookTitle" name="bookTitle" />
               </div>
-              <div class="email">
-                <label for="email">EMAIL</label>
-                <input type="email" id="email" name="email" />
+              <div class="bookAuthor">
+                <label for="bookAuthor">AUTHOR</label>
+                <input type="text" id="bookAuthor" name="bookAuthor" />
               </div>
-              <div class="password">
-                <label for="password">PASSWORD</label>
-                <input type="password" id="password" name="password" />
+              <div class="bookPages">
+                <label for="bookPages">PAGES</label>
+                <input type="number" id="bookPages" name="bookPages" />
               </div>
-              <div class="lastName">
-                <label for="lastName">LAST NAME</label>
-                <input type="text" id="lastName" name="lastName" />
-              </div>
-              <div class="phone">
-                <label for="phone">PHONE NUMBER</label>
-                <input type="text" id="phone" name="phone" />
-              </div>
-              <div class="repassword">
-                <label for="repassword">CONFIRM PASSWORD</label>
-                <input type="repassword" id="repassword" name="repassword" />
+              <div class="haveYouRead">
+                <label for="haveRead">HAVE YOU READ THIS?</label>
+                <select name="haveYouRead" id="haveYouRead">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
               </div>
             </div>
             <div class="button"><button class="submit">SUBMIT</button></div>
