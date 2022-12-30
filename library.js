@@ -1,9 +1,15 @@
 let viewport = document.querySelector(".viewport");
 let container = document.querySelector(".container");
 let newbook = document.querySelector(".create");
+let closeBtn = document.querySelector(".close");
 
+// allow the pop up form to be seen
 newbook.addEventListener("click", () => {
   document.getElementById("popupForm").style.display = "block";
+});
+
+closeBtn.addEventListener("click", () => {
+  document.getElementById("popupForm").style.display = "none";
 });
 
 // constructor function for a book

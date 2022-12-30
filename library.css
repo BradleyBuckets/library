@@ -35,7 +35,8 @@ div {
 .author,
 .pages,
 .read,
-.create {
+.create,
+.form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,12 +61,14 @@ div {
   font-size: large;
 }
 
-.remove {
+.remove,
+.close {
   margin: 10px;
 }
 
 .remove:hover,
-.create:hover {
+.create:hover,
+.close:hover {
   cursor: pointer;
   background-color: whitesmoke;
 }
@@ -73,11 +76,6 @@ div {
 .create {
   height: 40px;
   width: 200px;
-}
-
-.popup {
-  position: relative;
-  width: 100%;
 }
 
 .popupForm {
@@ -89,4 +87,29 @@ div {
   top: 10%;
   transform: translateX(-50%);
   background-color: whitesmoke;
+}
+
+.form {
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.firstName,
+.email,
+.button,
+.submit,
+.close {
+  padding: 5px;
 }

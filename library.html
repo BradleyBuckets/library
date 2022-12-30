@@ -10,8 +10,40 @@
   </head>
   <body>
     <div class="viewport">
-      <div class="popup">
-        <div class="popupForm" id="popupForm"></div>
+      <div class="popupForm" id="popupForm">
+        <h2 class="form">Add a New Book!</h2>
+        <div class="form">
+          <form action="/sign-up" method="post">
+            <div class="formWrapper">
+              <div class="firstName">
+                <label for="firstName">FIRST NAME</label>
+                <input type="text" id="firstName" name="firstName" />
+              </div>
+              <div class="email">
+                <label for="email">EMAIL</label>
+                <input type="email" id="email" name="email" />
+              </div>
+              <div class="password">
+                <label for="password">PASSWORD</label>
+                <input type="password" id="password" name="password" />
+              </div>
+              <div class="lastName">
+                <label for="lastName">LAST NAME</label>
+                <input type="text" id="lastName" name="lastName" />
+              </div>
+              <div class="phone">
+                <label for="phone">PHONE NUMBER</label>
+                <input type="text" id="phone" name="phone" />
+              </div>
+              <div class="repassword">
+                <label for="repassword">CONFIRM PASSWORD</label>
+                <input type="repassword" id="repassword" name="repassword" />
+              </div>
+            </div>
+            <div class="button"><button class="submit">SUBMIT</button></div>
+          </form>
+          <div class="close">Close</div>
+        </div>
       </div>
       <div class="container">
         <div class="add">
