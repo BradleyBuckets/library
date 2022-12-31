@@ -2,14 +2,41 @@ let viewport = document.querySelector(".viewport");
 let container = document.querySelector(".container");
 let newbook = document.querySelector(".create");
 let closeBtn = document.querySelector(".close");
+let submitBtn = document.querySelector(".submit");
+
+let myLibrary = [];
 
 // allow the pop up form to be seen
 newbook.addEventListener("click", () => {
   document.getElementById("popupForm").style.display = "block";
 });
-
+// close the pop up form
 closeBtn.addEventListener("click", () => {
   document.getElementById("popupForm").style.display = "none";
+});
+
+submitBtn.addEventListener("click", (e) => {
+  // prevent form from submitting
+  e.preventDefault();
+  // grab values of form inputs
+  let tit = document.getElementById("bookTitle");
+  let auth = document.getElementById("bookAuthor");
+  let pag = document.getElementById("bookPages");
+  let re = document.getElementById("haveYouRead");
+  // set re value to a boolean
+  let booleanRE = re.value === "true";
+  // create new book using the values
+  let tempbook = new Book(tit.value, auth.value, pag.value, booleanRE);
+  // add it to the library
+  tempbook.addToLibrary();
+  // reset form values
+  tit.value = null;
+  auth.value = null;
+  pag.value = null;
+  re.value = null;
+  // hide the form
+  document.getElementById("popupForm").style.display = "none";
+  updateScreen();
 });
 
 // constructor function for a book
@@ -75,17 +102,6 @@ Book.prototype.createCard = function () {
   container.appendChild(newCard);
 };
 
-// create new books
-let hobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, false);
-let kings = new Book("The Way of Kings", "Brandon Sanderson", 2340, true);
-let harryPotter = new Book("Harry Potter", "J.K. Rowling", 314, true);
-
-let myLibrary = [];
-
-hobbit.addToLibrary();
-kings.addToLibrary();
-harryPotter.addToLibrary();
-
 // add cards to the screen
 function updateScreen() {
   clearScreen();
@@ -115,7 +131,12 @@ function removeCard() {
   updateScreen();
 }
 
-updateScreen();
-let mormon = new Book("Bom", "Moroni", 560, true);
-mormon.addToLibrary();
-updateScreen();
+// create new books
+let hobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, false);
+let kings = new Book("The Way of Kings", "Brandon Sanderson", 2340, true);
+let harryPotter = new Book("Harry Potter", "J.K. Rowling", 314, true);
+
+// add them to library
+hobbit.addToLibrary();
+kings.addToLibrary();
+harryPotter.addToLibrary();

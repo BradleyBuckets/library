@@ -16,8 +16,8 @@
           <form action="/sign-up" method="post">
             <div class="formWrapper">
               <div class="bookTitle">
-                <label for="bookTitle">TITLE </label>
-                <input type="text" id="bookTitle" name="bookTitle" />
+                <label for="bookTitle">TITLE</label>
+                <input type="text" id="bookTitle" name="bookTitle" required />
               </div>
               <div class="bookAuthor">
                 <label for="bookAuthor">AUTHOR</label>
@@ -28,10 +28,10 @@
                 <input type="number" id="bookPages" name="bookPages" />
               </div>
               <div class="haveYouRead">
-                <label for="haveRead">HAVE YOU READ THIS?</label>
+                <label for="haveYouRead">HAVE YOU READ THIS?</label>
                 <select name="haveYouRead" id="haveYouRead">
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
                 </select>
               </div>
             </div>
