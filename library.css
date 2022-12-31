@@ -2,7 +2,7 @@
   margin: 0;
 }
 
-div {
+.container > div {
   border: 1px solid black;
 }
 
@@ -20,12 +20,13 @@ div {
 
 .card,
 .add {
-  height: 150px;
+  height: 250px;
   flex-direction: column;
   grid-column: span 2;
 }
 
 .add {
+  height: 100px;
   grid-column: span 4;
 }
 
@@ -36,7 +37,8 @@ div {
 .pages,
 .read,
 .create,
-.form {
+.form,
+.remove {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,34 +50,43 @@ div {
 }
 
 .pages,
-.read,
-.remove {
+.read {
   flex: 1;
+  padding: 5px;
 }
 
 .title {
-  font-size: larger;
+  font-size: x-large;
 }
 
 .author {
-  font-size: large;
+  font-size: larger;
 }
 
 .remove,
 .close {
   margin: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .remove:hover,
-.create:hover,
-.close:hover {
+.create:hover {
   cursor: pointer;
   background-color: whitesmoke;
+}
+.close:hover,
+.submit:hover {
+  cursor: pointer;
+  background-color: darkgray;
+  border: 1px solid black;
 }
 
 .create {
   height: 40px;
   width: 200px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .popupForm {
@@ -84,7 +95,7 @@ div {
   display: none;
   position: fixed;
   left: 50%;
-  top: 10%;
+  top: 8%;
   transform: translateX(-50%);
   background-color: whitesmoke;
 }
@@ -111,7 +122,26 @@ div {
 .bookPages,
 .haveYouRead,
 .button,
-.submit,
-.close {
+.submit {
   padding: 10px;
+}
+
+.remove,
+.close {
+  padding: 5px 15px;
+}
+
+.remove {
+  flex: 1;
+}
+
+.submit,
+.popupForm {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+input,
+select {
+  height: 20px;
 }

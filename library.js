@@ -140,3 +140,6 @@ let harryPotter = new Book("Harry Potter", "J.K. Rowling", 314, true);
 hobbit.addToLibrary();
 kings.addToLibrary();
 harryPotter.addToLibrary();
+
+// show first three books
+updateScreen();
